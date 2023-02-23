@@ -1,213 +1,51 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Iphone Screen Design</title>
 
 	<!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script type="text/javascript">
-  	$(document).ready(function(){
-  		$(".home").click(function(){
-  			$(".screen").toggleClass('active');
-  		});
-  	});
-  </script>
-
-  <style type="text/css">
-  	/*--------------------------------------------------------------
-	# Mobile Screen
-	--------------------------------------------------------------*/
-	.center{
-	  position: absolute;
-	  top: 50%;
-	  left: 50%;
-	  transform: translate(-50%, -50%);
-	}
-
-	.mobile{
-	  width: 276px;
-	  height: 580px;
-	  background: #fff;
-	  border-radius: 30px;
-	  border: 3px solid rgba(1, 1, 1, 0.3);
-	  box-sizing: border-box;
-	  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.4);
-	}
-
-	.screen{
-	  position: relative;
-	  background: #262626;
-	  width: 256px;
-	  height: 455px;
-	  margin: 58px auto;
-	  overflow: hidden;
-	}
-
-	.screen:before{
-	  content: '';
-	  position: absolute;
-	  top: 0;
-	  left: 0;
-	  background: rgba(255, 255, 255, 0.1);
-	  width: 100%;
-	  height: 100%;
-	  transform: skewX(-5deg) translateX(-50%);
-	}
-	.screen.active{
-		background-image: url('img/ios.jpg');
-		background-repeat: no-repeat;
-		background-size: 42vh;
-	}
-	#demo{
-		color: #fff;
-		margin-top: 100px;
-		margin-left: 60px;
-		font-size: 30px;
-	}
-	#demo .after:before{
-		content: '';
-	}
-	.home{
-	  position: absolute;
-	  left: 50%;
-	  bottom: 10px;
-	  transform: translateX(-50%);
-	  width: 40px;
-	  height: 40px;
-	  background: #fff;
-	  box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.1);
-	  border-radius: 50%;
-	  border: 2px solid #cecece;
-	  box-sizing: border-box;
-	  cursor: pointer;
-	}
-
-	.inner{
-	  position: absolute;
-	  top: 32px;
-	  left: 50%;
-	  transform: translateX(-50%);
-	  width: 40px;
-	  height: 4px; /*height of noch*/
-	  background: #262626;
-	  border-radius: 2px;
-	  box-sizing: border-box;
-	}
-
-	.inner:before{
-	  content: '';
-	  position: absolute;
-	  top: -2px;
-	  left: -22px;
-	  background: #262626;
-	  width: 8px;
-	  height: 8px;
-	  border-radius: 50%;
-	}
-
-	.inner:after{
-	  content: '';
-	  position: absolute;
-	  top: -16px;
-	  left: 50%;
-	  background: #262626;
-	  width: 6px;
-	  height: 6px;
-	  border-radius: 50%;
-	  transform: translateX(-50%);
-	}
-
-	.volume{ /* left side both button */
-	  margin: 0;
-	  padding: 0;
-	  position: absolute;
-	  top: 90px;
-	  left: -2px;
-	}
-
-	.volume li{
-	  list-style: none;
-	  width: 2px;
-	  height: 30px;
-	  background: #ccc;
-	  margin: 10px 0;
-	  border-top-left-radius: 4px;
-	  border-bottom-left-radius: 4px;
-	}
-
-	.silent{ /* top left first button */
-	  margin: 0;
-	  padding: 0;
-	  position: absolute;
-	  top: 50px;
-	  left: -2px;
-	}
-
-	.silent li{
-	  list-style: none;
-	  width: 2px;
-	  height: 20px;
-	  background: #ccc;
-	  margin: 10px 0;
-	  border-top-left-radius: 4px;
-	  border-bottom-left-radius: 4px;
-	}
-
-	.sleep{ /* right side button */
-	  margin: 0;
-	  padding: 0;
-	  position: absolute;
-	  top: 90px;
-	  right: -2px;
-	}
-
-	.sleep li{
-	  list-style: none;
-	  width: 2px;
-	  height: 30px;
-	  background: #ccc;
-	  margin: 10px 0;
-	  border-top-left-radius: 4px;
-	  border-bottom-right-radius: 4px;
-	}
-  </style>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="./js/main.js"></script>
+	<link rel="stylesheet" href="/css/style.css"/>
 </head>
+
 <body style="background: #000;">
 	<div class="center">
 		<div class="mobile">
 			<div class="screen active">
 				<p id="demo"></p>
+				<sapn id="day"></sapn>
+				<span id="date"></span>
+				<!-- <p id="volumeStatus"></p> -->
+				<span id="sound">
+					<img id='silentImg' src="/img/volume-mute-fill.svg" alt="Bootstrap" width="32" height="32" />
+					<p id="silentText">Silent</p>
+				</span>
 			</div>
-			<div class="home"></div>
+			<div class="home" onclick="handleTimer()"></div>
 			<div class="inner"></div>
-			
+
 			<ul class="volume">
-				<li></li>
-				<li></li>
+				<li id="volumeUp" onclick="handleVolumeUp()"></li>
+				<li id="volumeDown"></li>
 			</ul>
-			
-			<ul class="silent">
+
+			<ul class="silent" onclick="handleSilent()">
 				<li></li>
 			</ul>
 
-			<ul class="sleep">
+			<ul class="sleep active" onclick="handleTimer()">
 				<li></li>
 			</ul>
 		</div>
 	</div>
 </body>
-
-<script>
-setInterval(myTimer, 1000);
-
-function myTimer() {
-  const d = new Date();
-  document.getElementById("demo").innerHTML = d.toLocaleTimeString();
-}
-</script>
 
 </html>
